@@ -12,6 +12,7 @@ def tower_of_hanoi_solver(n: int):
 
     print('Final state: ',state)
 
+
 def move_two_disks(state: dict[str, list[int]], from_d: str, i: int, n: int) -> None:
     isEven = n % 2 == 0
     to_d = next_key(state, from_d, isEven)
@@ -47,6 +48,7 @@ def next_key(d: dict, current: str, isEven: bool) -> str:
     idx = keys.index(current)
     next_idx = (idx + step) % len(keys)
     return keys[next_idx]
+
 
 def get_top(state, disk):
     return state[disk][-1] if state[disk] else math.inf
